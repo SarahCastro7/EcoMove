@@ -1,81 +1,78 @@
-import coffeeService from '../service/coffeeServices.js';
+import ecoServices from '../services/ecoServices.js';
 import express from 'express';
 
-export const coffeeRoute = express.Router();
+export const EcoMove = express.Router();
 
-coffeeRoute.get('/', async (req, res) => {
+EcoMove.get('/', async (req, res) => {
     try {
-        const coffee = await coffeeService.getAll();
-        res.json(coffee);
+        const ecomove = await ecoServices.getAll();
+        res.json(ecomove);
     } catch (error) {
-        console.error('Erro ao listar coffee:', error);
+        console.error('Erro ao listar ecomove:', error);
         res.status(500).json({ message: error.message });
     }
 });
 
 
-coffeeRoute.get('/:id', async (req, res) => {
+EcoMove.get('/:id', async (req, res) => {
     try {
-        const coffee = await coffeeService.getById(req.params.id);
+        const ecomove = await ecoServices.getById(req.params.id);
 
-        if (!coffee) return res.status(404).json({ message: 'Não encontrado' });
-
-        res.json(coffee);
+        if (!ecomove) return res.status(404).json({ message: 'Não encontrado' });
+        res.json(ecomove);
     } catch (error) {
-        console.error('Erro ao buscar coffee por ID:', error);
+        console.error('Erro ao buscar ecomove por ID:', error);
         res.status(500).json({ message: error.message });
     }
 });
 
 
-coffeeRoute.post('/', async (req, res) => {
+EcoMove.post('/', async (req, res) => {
     try {
-        const coffee = await coffeeService.create(req.body);
-        res.status(201).json(coffee);
+        const ecomove = await ecoServices.create(req.body);
+        res.status(201).json(ecomove);
     } catch (error) {
-        console.error('Erro ao criar coffee:', error);
+        console.error('Erro ao criar ecomove:', error);
         res.status(500).json({ message: error.message });
     }
 });
 
 
-coffeeRoute.put('/:id', async (req, res) => {
+EcoMove.put('/:id', async (req, res) => {
     try {
-        const coffee = await coffeeService.update(req.params.id, req.body);
+        const ecomove = await ecoServices.update(req.params.id, req.body);
 
-        if (!coffee) return res.status(404).json({ message: 'Não encontrado' });
-
-        res.json(coffee);
+        if (!ecomove) return res.status(404).json({ message: 'Não encontrado' });
+        res.json(ecomove);
     } catch (error) {
-        console.error('Erro ao atualizar usuarios:', error);
+        console.error('Erro ao atualizar ecomove:', error);
         res.status(500).json({ message: error.message });
     }
 });
 
 
-coffeeRoute.patch('/:id', async (req, res) => {
+EcoMove.patch('/:id', async (req, res) => {
     try {
-        const coffee = await coffeeService.patch(req.params.id, req.body);
+        const ecomove = await ecoServices.patch(req.params.id, req.body);
 
-        if (!coffee) return res.status(404).json({ message: 'Não encontrado' }); 
+        if (!ecomove) return res.status(404).json({ message: 'Não encontrado' });
 
-        res.json(coffee);
+        res.json(ecomove);
     } catch (error) {
-        console.error('Erro ao atualizar parcialmente o usuario:', error);
+        console.error('Erro ao atualizar parcialmente o ecomove:', error);
         res.status(500).json({ message: error.message });
     }
 });
 
 
-coffeeRoute.delete('/:id', async (req, res) => {
+EcoMove.delete('/:id', async (req, res) => {
     try {
-        const coffee = await coffeeService.delete(req.params.id);
+        const ecomove = await ecoServices.delete(req.params.id);
 
-        if (!coffee) return res.status(404).json({ message: 'Não encontrado' });
-
-        res.json(coffee);
+        if (!ecomove) return res.status(404).json({ message: 'Não encontrado' });
+        res.json(ecomove);
     } catch (error) {
-        console.error('Erro ao excluir usuario:', error);
+        console.error('Erro ao excluir ecomove:', error);
         res.status(500).json({ message: error.message });
     }
 });

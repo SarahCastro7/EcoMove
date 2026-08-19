@@ -1,5 +1,5 @@
 import express from 'express';
-import { coffeeRoute } from './routes/coffeeRoutes.js'
+import { EcoMove } from './routes/ecoRoutes.js'
 
 const app = express();
 const PORT = 3000;
@@ -9,7 +9,7 @@ app.get('/' , (req,res) => {
     res.send("src");
 });
 
-app.use('/coffee' , coffeeRoute);
+app.use('/ecomove' , EcoMove);
 
 app.listen(PORT, () => {
     console.log (`server rodando aq http://localhost:${PORT}`);

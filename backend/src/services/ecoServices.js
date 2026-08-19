@@ -3,7 +3,7 @@ import 'dotenv/config';
 
 const TABLE = 'usuarios';
 
-class coffeService {
+class ecoService {
 
     async getAll() {
         try {
@@ -99,4 +99,4 @@ class coffeService {
     }
 }
 
-export default new coffeService();
+export default new ecoService();
