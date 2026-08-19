@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMove</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+  <!-- Lateral Esquerda (Sidebar) -->
+
+
+  <aside class="sidebar">
+    <div class="profile-section" id="profileSection">
+
+      <img src="images/logo.png" alt="EcoMove Logo" class="sidebar-logo">
+
+      <h2 id="profileName">EcoMove</h2>
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-number" id="userActivitiesCount">5</span>
+          <span class="stat-label">Qtd. Atividades</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="userCo2Count">1.62</span>
+          <span class="stat-label">Qtd. CO₂ (kg)</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <span class="nav-icon">📊</span>
+        <span>Atividade</span>
+      </a>
+    </nav>
+
+    <footer class="sidebar-footer">
+      <h3>EcoMove</h3>
+      <div class="social-links">
+        <span>📷 Instagram</span>
+        <span>🎵 TikTok</span>
+      </div>
+      <p class="copyright">Copyright-2024</p>
+    </footer>
+  </aside>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="btn-auth" id="authBtn">Login</button>
+    </header>
+
+    <div class="filter-bar">
+      <button class="filter-btn active">Bicicleta</button>
+      <button class="filter-btn">Caminhada</button>
+      <button class="filter-btn">Transporte público</button>
+    </div>
+
+    <div class="content-body">
+      <!-- Seção de Criar Atividade (Visível apenas quando logado) -->
+      <section class="card create-activity-card hidden" id="createActivityCard">
+        <h3>Crie sua atividade</h3>
+        <form id="createActivityForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="actType">Tipo da atividade</label>
+              <select id="actType" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="Caminhada">Caminhada</option>
+                <option value="Bicicleta">Bicicleta</option>
+                <option value="Transporte público">Transporte público</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="actDistance">Distância (metros)</label>
+              <input type="number" id="actDistance" placeholder="Ex: 1000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="actDuration">Duração (minutos)</label>
+              <input type="number" id="actDuration" placeholder="Ex: 30" required>
+            </div>
+          </div>
+          <button type="submit" class="btn-dark">Criar Atividade</button>
+        </form>
+      </section>
+
+      <!-- Feed de Atividades -->
+      <div class="feed-container" id="feedContainer">
+        <!-- Card Exemplo 1 -->
+        <article class="card activity-card" data-id="1">
+          <div class="card-header">
+            <span class="activity-title">Caminhada</span>
+            <span class="activity-date">09:15 - 05/10/24</span>
+          </div>
+          <div class="card-body">
+            <div class="user-avatar avatar-green">👩‍🦱</div>
+            <div class="activity-info">
+              <span class="user-name">Usuário_03</span>
+              <div class="metrics">
+                <div><strong>2 km</strong><small>Distância</small></div>
+                <div><strong>30 min</strong><small>Duração</small></div>
+                <div><strong>0.22 kg</strong><small>CO₂ evitado</small></div>
+              </div>
+            </div>
+            <div class="activity-actions">
+              <button class="action-btn btn-like"><span class="heart-icon">♥</span> <span
+                  class="like-count">1</span></button>
+              <button class="action-btn btn-comment-toggle">💬 <span class="comment-count">1</span></button>
+            </div>
+          </div>
+          <!-- Área de Comentários Expandível -->
+          <div class="comments-section">
+            <div class="comments-list">
+              <div class="comment-item"><strong>Usuário_01:</strong> Ótima caminhada!</div>
+            </div>
+            <div class="comment-input-box">
+              <input type="text" placeholder="Escrever um comentário..." class="comment-input">
+              <button class="btn-send-comment">Enviar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card Exemplo 2 -->
+        <article class="card activity-card" data-id="2">
+          <div class="card-header">
+            <span class="activity-title">Transporte Publico</span>
+            <span class="activity-date">20:40 - 15/08/24</span>
+          </div>
+          <div class="card-body">
+            <div class="user-avatar avatar-orange">🧑</div>
+            <div class="activity-info">
+              <span class="user-name">Usuário_02</span>
+              <div class="metrics">
+                <div><strong>10 km</strong><small>Distância</small></div>
+                <div><strong>50 min</strong><small>Duração</small></div>
+                <div><strong>0.35 kg</strong><small>CO₂ evitado</small></div>
+              </div>
+            </div>
+            <div class="activity-actions">
+              <button class="action-btn btn-like"><span class="heart-icon">♡</span> <span
+                  class="like-count">0</span></button>
+              <button class="action-btn btn-comment-toggle">💬 <span class="comment-count">0</span></button>
+            </div>
+          </div>
+          <div class="comments-section">
+            <div class="comments-list"></div>
+            <div class="comment-input-box">
+              <input type="text" placeholder="Escrever um comentário..." class="comment-input">
+              <button class="btn-send-comment">Enviar</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Paginação -->
+      <div class="pagination">
+        <button disabled>Anterior</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>Próximo</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de Login -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Login</h3>
+        <span class="btn-close" id="closeModalBtn">&times;</span>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Senha</label>
+          <input type="password" id="loginPassword" required>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-dark">Login</button>
+          <button type="button" class="btn-light" id="cancelModalBtn">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
