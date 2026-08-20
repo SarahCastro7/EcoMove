@@ -1,16 +1,12 @@
 import express from 'express';
-import { EcoMove } from './routes/ecoRoutes.js'
+import animalRoutes from './routes/ecoRoutes.js'
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.get('/' , (req,res) => {
-    res.send("src");
-});
+app.use(ecoRoutes);
 
-app.use('/ecomove' , EcoMove);
-
-app.listen(PORT, () => {
-    console.log (`server rodando aq http://localhost:${PORT}`);
+app.listen({ port: 3000 }, () => {
+  console.log('Servidor rodando em http://localhost:3000')
 })
