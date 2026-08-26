@@ -39,6 +39,8 @@ EcoMove/
 |── README.md
 ├── .gitignore
 
+---
+
 ## 💻 Como Rodar o Projeto Localmente
 
 Siga rigorosamente a ordem dos passos abaixo para executar a aplicação em sua máquina.
