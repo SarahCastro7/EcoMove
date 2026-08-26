@@ -48,11 +48,11 @@ EcoMove/
 
 ├── css/
 
-│   ├── index.css/      # Pasta responsavel pelos arquivos que fazem a estilização do site
+   ├── index.css/      # Pasta responsavel pelos arquivos que fazem a estilização do site
 
 ├── images/             # Pasta responsavel por armazenar todas as imagens usada no site
 
-│   ├── usuario.png/     
+   ├── usuario.png/     
 
 ├── index.html          # Arquivo responsavel pelo conteudo da pagina
 
