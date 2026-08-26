@@ -16,52 +16,29 @@
 ## Estrutura das pastas
 
 EcoMove/
-
 |-Backend/
-
 ├── src/
-
-├── config/          # Configurações gerais (banco de dados, variáveis de ambiente)
-
-├── controllers/     # Lógica de controle que recebe as requisições e envia respostas
-
-├── models/          # Definição dos dados e tabelas (esquemas do banco)
-
-├── repositories/    # Comunicação direta com o banco de dados (consultas)
-
-├── routes/          # Definição dos endpoints da API
-
-├── services/        # Regras de negócio da aplicação
-
-├── middlewares/     # Funções intermediárias (autenticação, validação)
-
-└── server.js        # Ponto de entrada (inicialização do servidor)
-
+│   ├── config/          # Configurações gerais (banco de dados, variáveis de ambiente)
+│   ├── controllers/     # Lógica de controle que recebe as requisições e envia respostas
+│   ├── models/          # Definição dos dados e tabelas (esquemas do banco)
+│   ├── repositories/    # Comunicação direta com o banco de dados (consultas)
+│   ├── routes/          # Definição dos endpoints da API
+│   ├── services/        # Regras de negócio da aplicação
+│   ├── middlewares/     # Funções intermediárias (autenticação, validação)
+│   └── server.js        # Ponto de entrada (inicialização do servidor)
 ├── .env                 # Variáveis de ambiente
-
 ├── package-lock.json
-
 ├── package.json
-
 |
 |-Frontend/
-
-├── css/                # Pasta responsavel pelos arquivos que fazem a estilização do site
-
-   ├── index.css/     
-
+├── css/
+│   ├── index.css/      # Pasta responsavel pelos arquivos que fazem a estilização do site
 ├── images/             # Pasta responsavel por armazenar todas as imagens usada no site
-
-   ├── usuario.png/     
-
+│   ├── usuario.png/     
 ├── index.html          # Arquivo responsavel pelo conteudo da pagina
-
 ├── index.js            # Arquivo responsavel pela animação usada na pagina  
-
 |── README.md
-
 ├── .gitignore
-
 
 ---
 
