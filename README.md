@@ -84,7 +84,7 @@ Para permitir o uso de importações modernas do ES6 (`import` / `export`), abra
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node index.js"
+    "dev": "node ./src/server.js"
   }
 }
 ```
