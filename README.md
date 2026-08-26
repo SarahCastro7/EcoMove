@@ -2,8 +2,8 @@
 
 ## 🛠️ Tecnologias usadas
 
-- Css
-- Html
+- CSS
+- HTML
 - Dotenv
 - Cors
 - Pg
