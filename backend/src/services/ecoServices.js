@@ -11,9 +11,6 @@ export const ecoService = {
         return ecoExistente;
     },
     async createeco(ecoRequisicao){
-        if(ecoRequisicao.idade<0){
-            throw new Error('A idade do EcoMove tem que ser maior do que 0.')
-        }
         return await ecoRepository.create(ecoRequisicao);
     },
 
