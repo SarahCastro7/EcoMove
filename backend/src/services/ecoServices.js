@@ -1,7 +1,7 @@
 import {ecoRepository} from '../repositories/ecoRepository.js'
 
 export const ecoService = {
-    async getAllAnimais(){
+    async getAlleco(){
         return await ecoRepository.findAll();
     },
 
@@ -36,7 +36,7 @@ export const ecoService = {
     async deleteeco(id){
         const ecoApagado = await ecoRepository.delete(id);
         if(!ecoApagado) throw new Error('EcoMove não encontrado');
-        
-        return await ecoApagado; 
+
+        return await ecoApagado;
     }
 }
